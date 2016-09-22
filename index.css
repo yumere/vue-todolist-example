@@ -1,0 +1,130 @@
+html, body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #f5f5f5;
+    color: rgb(77, 77, 77);
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+ul, li {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+header{
+    position: relative;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 100;
+    color: rgba(175, 147, 47, 0.15);
+    margin-bottom: 10px;
+}
+
+#app {
+    position: relative;
+    background-color: #ffffff;
+    margin: 130px 0 40px 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.check-all{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    -webkit-appearance: none;
+
+    background: none;
+
+    position: absolute;
+    top: 1px;
+    left: 17px;
+    /*width: 60px;*/
+    /*height: 34px;*/
+    border: none;
+}
+
+.check-all.checked:before{
+    color: rgb(115, 115, 115);
+}
+
+.check-all:before{
+    content: '❯';
+    font-size: 22px;
+    color: #e6e6e6;
+}
+
+input.addTodo{
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+    border: none;
+    font-size: 24px;
+}
+
+input.checkbox{
+    -webkit-appearance: none;
+    height: 40px;
+    background: none;
+
+    margin: 9px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+input.checkbox:after{
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+input.checkbox.checked:after{
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+input{
+    outline: none;
+}
+
+.item{
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+}
+
+.item.checked .text{
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+
+.text{
+    white-space: pre-line;
+    word-break: break-all;
+    padding: 15px 60px 15px 20px;
+    margin-left: 45px;
+    display: block;
+    line-height: 1.2;
+    -webkit-transition: color 0.4s;
+    -moz-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    -o-transition: color 0.4s;
+    transition: color 0.4s;
+}

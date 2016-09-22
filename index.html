@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO List</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div id="app">
+    <h2>TODO List</h2>
+    <header>
+        <input type="checkbox" class="check-all {{ checkAll ? 'checked' : '' }}" v-model="checkAll" checked="{{ checkAll }}" v-on:change="checkAllToggle">
+        <input type="text" class="addTodo" placeholder="What needs to be done?" v-on:keyup.enter="addTodo" v-model="newTodo">
+    </header>
+    <ul class="item-list">
+        <li class="item {{ todo.checked ? 'checked' : '' }}" v-for="todo in todos">
+            <input type="checkbox" class="checkbox  {{ todo.checked ? 'checked' : '' }}" checked="{{ todo.checked }}" v-on:change="check($index)">
+            <label for="" class="text">{{ todo.text }}</label>
+        </li>
+    </ul>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/vue/dist/vue.min.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            newTodo: '',
+            checkAll: false,
+            todos: [
+                {checked: false, text: "1"},
+                {checked: false, text: "2"},
+                {checked: false, text: "3"}
+            ]
+        },
+        methods: {
+            check: function(index){
+                this.todos[index].checked = !this.todos[index].checked;
+            },
+            addTodo: function(){
+                if(this.newTodo.trim() == ''){
+                    return false;
+                }
+
+                this.todos.push({
+                    checked: false,
+                    text: this.newTodo.trim()
+                });
+                this.newTodo = '';
+            },
+            checkAllToggle: function(){
+                console.log(this.checkAll);
+                if(this.checkAll == false){
+                    this.todos.forEach(function(item){
+                        item.checked = false;
+                    });
+                }
+                else{
+                    this.todos.forEach(function(item){
+                        item.checked = true;
+                    })
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

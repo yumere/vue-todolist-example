@@ -1,0 +1,23 @@
+{
+  "name": "vue-todolist-example",
+  "version": "1.0.0",
+  "description": "Make Todolist single page using vue.js as example.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumere/vue-todolist-example.git"
+  },
+  "author": "yumere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yumere/vue-todolist-example/issues"
+  },
+  "homepage": "https://github.com/yumere/vue-todolist-example#readme",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "vue": "^1.0.26"
+  }
+}
